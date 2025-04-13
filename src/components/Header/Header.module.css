@@ -1,0 +1,62 @@
+/* src/components/Header/Header.module.css */
+.header {
+    background-color: rgba(255, 255, 255, 0.9); /* bg-white bg-opacity-90 */
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); /* shadow-md */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: saturate(180%) blur(5px); /* backdrop-blur-sm */
+     /* body.dark & { background-color: rgba(31, 41, 55, 0.9); } */ /* bg-gray-800 */
+  }
+  
+  .nav {
+    /* Uses global container */
+     padding-top: 1rem; /* py-4 */
+     padding-bottom: 1rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+  }
+  
+  .logoLink {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-800 */
+    transition: color 0.2s ease;
+     /* body.dark & { color: white; } */
+  }
+   .logoLink:hover {
+     color: #3b82f6; /* hover:text-blue-500 */
+     text-decoration: none;
+   }
+  
+  .navLinks {
+     display: none; /* hidden */
+  }
+   @media (min-width: 768px) { /* md breakpoint */
+     .navLinks {
+       display: flex;
+       gap: 1.5rem; /* space-x-6 */
+     }
+   }
+  
+  .navLink {
+     color: #4b5563; /* text-gray-600 */
+     font-weight: 500; /* font-medium */
+     transition: color 0.2s ease;
+     /* body.dark & { color: #d1d5db; } */
+  }
+  .navLink:hover {
+    color: #3b82f6; /* hover:text-blue-500 */
+    text-decoration: none;
+     /* body.dark &:hover { color: #60a5fa; } */
+  }
+  
+   /* Add styles for mobile menu button later */
+   .mobileMenuButton {
+     display: block;
+     /* Add styling for burger icon */
+     @media (min-width: 768px) {
+       display: none; /* Hide on md and up */
+     }
+   }

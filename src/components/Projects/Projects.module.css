@@ -1,0 +1,25 @@
+/* src/components/Projects/Projects.module.css */
+.projectsSection {
+    background-color: #e5e7eb; /* bg-gray-200 */
+    /* Add dark mode styles */
+    /* body.dark & { background-color: #1f2937; } */
+  }
+  .heading {
+    /* Uses global h2 */
+    color: #1f2937; /* text-gray-800 */
+    /* body.dark & { color: white; } */
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default one column */
+    gap: 2rem; /* gap-8 */
+  }
+  @media (min-width: 768px) { /* md breakpoint */
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) { /* lg breakpoint */
+    .grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem;} /* lg:gap-10 */
+  }
+  .gridItem {
+     height: 100%; /* Needed for framer motion + card */
+  }

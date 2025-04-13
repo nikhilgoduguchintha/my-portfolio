@@ -1,0 +1,82 @@
+/* src/components/Contact/Contact.module.css */
+.contactSection {
+  background: linear-gradient(
+    to bottom,
+    #f8f9fa,
+    #ffffff
+  ); /* bg-gradient-to-b from-gray-100 to-white */
+  /* Add dark mode styles */
+  /* body.dark & { background: linear-gradient(to bottom, #1f2937, #111827); } */
+}
+.heading {
+  /* Uses global h2 */
+  color: #1f2937;
+  /* body.dark & { color: white; } */
+}
+.formWrapper {
+  max-width: 36rem; /* max-w-lg */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-xl */
+  /* body.dark & { background-color: #1f2937; } */
+}
+.introText {
+  text-align: center;
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 2rem; /* mb-8 */
+  font-size: 1.125rem; /* text-lg */
+  /* body.dark & { color: #d1d5db; } */
+}
+.linksWrapper {
+  text-align: center;
+  margin-top: 2.5rem; /* mt-10 */
+  padding-top: 1.5rem; /* pt-6 */
+  border-top: 1px solid #e5e7eb; /* border-t */
+  /* body.dark & { border-color: #4b5563; } */
+}
+.linksHeading {
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1rem; /* mb-4 */
+  /* body.dark & { color: #d1d5db; } */
+}
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* space-x-6 */
+}
+.socialLink {
+  /* body.dark & { color: #9ca3af; } */
+  /* Make the link itself a flex container */
+  display: inline-flex; /* Use inline-flex to keep links inline */
+  align-items: center; /* Vertically align items inside the link */
+  gap: 0.5rem; /* Add space between icon and text (adjust as needed) */
+
+  color: #6b7280; /* text-gray-500 */
+  font-size: 1.25rem; /* Reduced font-size slightly for better balance */
+  /* text-3xl (1.875rem) might be too large for icon + text */
+  transition: color 0.2s ease;
+  /* body.dark & { color: #9ca3af; } */
+}
+.socialLink:hover {
+  color: #3b82f6; /* hover:text-blue-600 */
+   body.dark &:hover { color: #60a5fa; }
+   text-decoration: none; /* Remove underline on hover for the container */
+}
+.socialLink:hover span {
+  text-decoration: underline; /* Underline only text on hover */
+}
+
+/* Add specific hover colors if needed */
+.socialLink[href*="github"]:hover {
+  color: #111827;
+  /* body.dark &:hover { color: #f9fafb; } */
+}
+
+.socialLink svg {
+  font-size: 1.5em; /* Scale icon slightly larger than text if needed */
+  /* vertical-align: middle; */ /* Alternative approach, less reliable than flex */
+}

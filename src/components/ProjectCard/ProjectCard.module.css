@@ -1,0 +1,114 @@
+/* src/components/ProjectCard.module.css */
+.card {
+    background-color: white;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
+    overflow: hidden;
+    height: 100%; /* Ensure it takes full height from grid */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+  }
+  /* Hover handled by framer motion, but could add CSS fallback */
+  /* .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  } */
+  
+  .image {
+    width: 100%;
+    height: 14rem; /* h-56 */
+    object-fit: cover; /* Ensure image covers the area */
+  }
+  
+  .content {
+    padding: 1.5rem; /* p-6 */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows footer to stick to bottom */
+  }
+  
+  .title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+    color: #1f2937; /* text-gray-900 */
+  }
+  
+  .company {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* text-gray-500 */
+    margin-left: 0.5rem; /* ml-2 */
+  }
+  
+  .description {
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 0.75rem; /* mb-3 */
+    flex-grow: 1; /* Pushes tech stack/links down */
+  }
+  
+   .roleInfo {
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 1rem; /* mb-4 */
+  }
+  .roleLabel {
+    font-weight: 600; /* font-semibold */
+     color: #374151; /* text-gray-700 */
+  }
+  
+  
+  .techStackLabel {
+    font-weight: 600; /* font-semibold */
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* text-gray-700 */
+     display: block; /* block */
+     margin-bottom: 0.25rem; /* mb-1 */
+  }
+  
+  .techStackBadges {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.5rem; /* gap-2 */
+     margin-bottom: 1rem; /* mb-4 */
+  }
+  
+  .techBadge {
+    background-color: #e0f2fe; /* bg-blue-100 */
+    color: #0369a1; /* text-blue-800 */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 500; /* font-medium */
+    padding: 0.25rem 0.625rem; /* px-2.5 py-1 */
+    border-radius: 9999px; /* rounded-full */
+  }
+  
+  .footer {
+    margin-top: auto; /* Pushes footer to bottom */
+    padding-top: 1rem; /* pt-4 */
+    border-top: 1px solid #e5e7eb; /* border-t border-gray-200 */
+    display: flex;
+    gap: 1rem; /* space-x-4 */
+  }
+  
+  .link {
+     color: #3b82f6; /* text-blue-500 */
+     font-size: 0.875rem; /* text-sm */
+     font-weight: 500; /* font-medium */
+     transition: color 0.2s ease;
+  }
+   .link:hover {
+      color: #1d4ed8; /* hover:text-blue-700 */
+      text-decoration: underline;
+   }
+  
+   .linkDisabled {
+     color: #9ca3af; /* text-gray-400 */
+     font-size: 0.875rem; /* text-sm */
+     cursor: default;
+   }
+  
+   /* Dark mode overrides (example) */
+   /* body.dark .card { background-color: #374151; } */
+   /* body.dark .title { color: white; } */
+   /* ...etc */
