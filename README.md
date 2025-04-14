@@ -4,7 +4,7 @@ Welcome to the source code repository for my personal portfolio website. This si
 
 ---
 
-**🚀 Live Demo:** [**Portfolio_URL**](https://nikhilgoduguchintha.in)
+**🚀 Live Demo:** [**PORTFOLIO_URL**](https://nikhilgoduguchintha.in)
 
 ---
 
