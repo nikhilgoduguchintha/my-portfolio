@@ -2,7 +2,6 @@
 .aboutSection {
   /* Uses global .container class via parent */
   /* background-color: #ffffff; */ /* Optional background */
-  padding-top: 2rem;
 }
 
 .heading {

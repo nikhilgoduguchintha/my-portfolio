@@ -14,11 +14,6 @@ function ProjectCard({ project }) {
       whileHover={{ y: -8, scale: 1.03, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
     >
-      <img
-        src={project.imageUrl || "https://via.placeholder.com/600x400?text=Project+Image"}
-        alt={`${project.title} screenshot`}
-        className={styles.image} // Use image style
-       />
       <div className={styles.content}> {/* Use content style */}
         <h3 className={styles.title}>{project.title}
           <span className={styles.company}>({project.company})</span>
@@ -37,14 +32,10 @@ function ProjectCard({ project }) {
             ))}
           </div>
         </div>
-        <div className={styles.footer}> {/* Use footer style */}
+        <div className={styles.footer}>
           {project.liveUrl ? (
              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>Live Demo</a>
           ) : <span className={styles.linkDisabled}>Demo N/A</span>}
-
-           {project.githubUrl ? (
-             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub Repo</a>
-          ) : <span className={styles.linkDisabled}>Code N/A</span>}
         </div>
       </div>
     </motion.div>

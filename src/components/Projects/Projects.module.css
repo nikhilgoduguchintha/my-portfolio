@@ -1,8 +1,5 @@
-/* src/components/Projects/Projects.module.css */
 .projectsSection {
-    background-color: #e5e7eb; /* bg-gray-200 */
-    /* Add dark mode styles */
-    /* body.dark & { background-color: #1f2937; } */
+    background-color: #e5e7eb;
   }
   .heading {
     /* Uses global h2 */

@@ -1,15 +1,11 @@
-// src/components/Skills/Skills.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { skillsData } from '../../data/skills'; // Adjust path
+import { skillsData } from '../../data/skills';
 import styles from './Skills.module.css';
-// Import icons later: import { FaReact } from 'react-icons/fa';
 
 function Skills() {
   const getIcon = (skillName) => {
-    // Placeholder for react-icons logic
-    // if (skillName === 'React') return <FaReact />;
-    return '●'; // Default bullet
+    return '●';
   };
 
   const cardVariants = {
@@ -18,8 +14,8 @@ function Skills() {
   };
 
   return (
-    <section id="skills" className={`container ${styles.skillsSection}`}> {/* Add container */}
-      <motion.h2 /* className={styles.heading} - Use global h2 */
+    <section id="skills" className={`container ${styles.skillsSection}`}>
+      <motion.h2 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.5 }}

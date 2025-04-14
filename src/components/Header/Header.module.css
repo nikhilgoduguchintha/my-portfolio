@@ -1,62 +1,113 @@
 /* src/components/Header/Header.module.css */
 .header {
-    background-color: rgba(255, 255, 255, 0.9); /* bg-white bg-opacity-90 */
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); /* shadow-md */
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    backdrop-filter: saturate(180%) blur(5px); /* backdrop-blur-sm */
-     /* body.dark & { background-color: rgba(31, 41, 55, 0.9); } */ /* bg-gray-800 */
-  }
-  
-  .nav {
-    /* Uses global container */
-     padding-top: 1rem; /* py-4 */
-     padding-bottom: 1rem;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-  }
-  
-  .logoLink {
-    font-size: 1.5rem; /* text-2xl */
-    font-weight: 700; /* font-bold */
-    color: #1f2937; /* text-gray-800 */
-    transition: color 0.2s ease;
-     /* body.dark & { color: white; } */
-  }
-   .logoLink:hover {
-     color: #3b82f6; /* hover:text-blue-500 */
-     text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(180%) blur(5px);
+}
+/* Add this class for positioning context */
+.relativePosition {
+    position: relative;
+}
+
+.nav {
+  /* Uses global container */
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.logoLink {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  transition: color 0.2s ease;
+  z-index: 60; /* Ensure logo is above mobile menu */
+}
+ .logoLink:hover {
+   color: #3b82f6;
+   text-decoration: none;
+ }
+
+.desktopNavLinks { /* Renamed from navLinks */
+   display: none; /* Hidden by default */
+}
+ @media (min-width: 768px) { /* md breakpoint */
+   .desktopNavLinks {
+     display: flex; /* Displayed on medium and up */
+     gap: 1.5rem;
    }
-  
-  .navLinks {
-     display: none; /* hidden */
+ }
+
+.navLink {
+   color: #4b5563;
+   font-weight: 500;
+   transition: color 0.2s ease;
+}
+.navLink:hover {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+/* Mobile Menu Button Styles */
+.mobileMenuButton {
+  display: block; /* Display by default */
+  background: none;
+  border: none;
+  padding: 0.5rem; /* Add some padding for easier tapping */
+  cursor: pointer;
+  z-index: 60; /* Ensure button is above mobile menu */
+  color: #1f2937; /* Icon color */
+  /* body.dark & { color: white; } */
+}
+.mobileMenuButton svg { /* Style the icon inside */
+    width: 1.5rem; /* 24px */
+    height: 1.5rem;
+    display: block; /* Fix potential inline spacing issues */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .mobileMenuButton {
+    display: none; /* Hide button on medium and up */
   }
-   @media (min-width: 768px) { /* md breakpoint */
-     .navLinks {
-       display: flex;
-       gap: 1.5rem; /* space-x-6 */
-     }
-   }
-  
-  .navLink {
-     color: #4b5563; /* text-gray-600 */
-     font-weight: 500; /* font-medium */
-     transition: color 0.2s ease;
-     /* body.dark & { color: #d1d5db; } */
-  }
-  .navLink:hover {
-    color: #3b82f6; /* hover:text-blue-500 */
-    text-decoration: none;
-     /* body.dark &:hover { color: #60a5fa; } */
-  }
-  
-   /* Add styles for mobile menu button later */
-   .mobileMenuButton {
-     display: block;
-     /* Add styling for burger icon */
-     @media (min-width: 768px) {
-       display: none; /* Hide on md and up */
-     }
-   }
+}
+
+/* Mobile Menu Container Styles */
+.mobileMenu {
+  position: absolute; /* Position below header */
+  top: 100%; /* Start right below the header */
+  left: 0;
+  right: 0;
+  background-color: white; /* Match header or use slightly different bg */
+  /* body.dark & { background-color: #1f2937; } */
+  padding: 1rem 0; /* Vertical padding */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+  border-top: 1px solid #e5e7eb; /* Optional separator */
+   /* body.dark & { border-color: #374151; } */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center links horizontally */
+  gap: 0.5rem; /* Space between links */
+}
+
+/* Mobile Navigation Link Styles */
+.mobileNavLink {
+  color: #374151; /* text-gray-700 */
+  /* body.dark & { color: #d1d5db; } */
+  padding: 0.75rem 1.5rem; /* py-3 px-6 - make links easily tappable */
+  font-weight: 500;
+  width: 100%; /* Make link take full width */
+  text-align: center;
+  border-radius: 0.25rem; /* rounded-sm */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.mobileNavLink:hover {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #1d4ed8; /* text-blue-700 */
+  text-decoration: none;
+  /* body.dark &:hover { background-color: #374151; color: #60a5fa; } */
+}

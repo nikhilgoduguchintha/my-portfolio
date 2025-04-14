@@ -93,8 +93,3 @@
     background-color: #1f2937; /* hover:bg-gray-800 */
     transform: scale(1.05);
   }
-  
-  /* Dark mode example */
-  /* body.dark .heroSection { background: linear-gradient(...) } */
-  /* body.dark .headline { color: #f9fafb; } */
-  /* body.dark .intro { color: #d1d5db; } */

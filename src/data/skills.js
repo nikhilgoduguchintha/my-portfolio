@@ -1,12 +1,10 @@
-// src/data/skills.js
-// You can enhance this later by adding specific icons from react-icons
 export const skillsData = {
     frontend: [
         { name: "React" },
         { name: "JavaScript (ES6+)" },
         { name: "HTML5" },
         { name: "CSS3" },
-        { name: "Tailwind CSS" },
+        { name: "Jest" },
         { name: "Framer Motion" },
         { name: "State Management" },
         { name: "React Router" },
@@ -17,7 +15,8 @@ export const skillsData = {
         { name: "Node.js" },
         { name: "Spring Boot"},
         { name: "RESTful APIs" },
-        // Add any database or specific backend framework familiarity
+        { name: "SQL Databases" },
+        { name: "NoSQL (MongoDB - Familiar)"}
     ],
     other: [
         { name: "Git & GitHub" },
@@ -26,6 +25,5 @@ export const skillsData = {
         { name: "Agile Methodologies" },
         { name: "System Design"},
         { name: "Data Structures & Algos"}
-        // Add Testing tools (Jest, RTL), Design tools (Figma) if applicable
     ]
 };
