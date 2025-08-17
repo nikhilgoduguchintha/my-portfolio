@@ -1,25 +1,34 @@
 // src/components/Hero.jsx
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import styles from './Hero.module.css';
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import styles from "./Hero.module.css";
+import resume from "/assets/resume.pdf";
 
 function Hero() {
-  const headline = "Hi, I'm Goduguchintha Nikhil. A Full-Stack Engineer building intuitive and performant web experiences.";
-  const intro = "With over 5 years of experience delivering impactful solutions for companies like Lloyds, Cloud4C, and Tech Mahindra (for Telefonica), I focus on creating clean code, seamless user interfaces, and engaging interactions.";
+  const headline =
+    "Hi, I'm Goduguchintha Nikhil. A Full-Stack Engineer building intuitive and performant web experiences.";
+  const intro =
+    "With over 5 years of experience delivering impactful solutions for companies like Lloyds, Cloud4C, and Tech Mahindra (for Telefonica), I focus on creating clean code, seamless user interfaces, and engaging interactions.";
 
   // Ref for the section to track scroll progress within it
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start start", "end start"] // Track scroll from when section top hits viewport top, until section bottom hits viewport top
+    offset: ["start start", "end start"], // Track scroll from when section top hits viewport top, until section bottom hits viewport top
   });
 
   // Create a parallax effect for the background
   // As scrollYProgress goes from 0 to 1, move background 'y' from 0% to 50% (adjust multiplier for speed)
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-   // Add another layer moving differently
+  // Add another layer moving differently
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "Nikhil-Resume.pdf";
+    link.click();
+  };
   return (
     // Add ref to the section
     <section id="hero" className={styles.heroSection} ref={targetRef}>
@@ -60,8 +69,14 @@ function Hero() {
           <a href="#contact" className={styles.secondaryButton}>
             Get In Touch
           </a>
-          <a href="https://drive.google.com/file/d/1CZpHp0ajJU4mWJSAe58TB9Uo09mrdMwu/view?usp=sharing" download="Nikhil-Resume.pdf" className={styles.secondaryButton}>
-            Download resume
+          <a
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Nikhil's resume.pdf"
+            className={styles.secondaryButton}
+          >
+            Download Resume
           </a>
         </motion.div>
       </motion.div>
