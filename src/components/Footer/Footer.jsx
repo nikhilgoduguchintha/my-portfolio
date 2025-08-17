@@ -10,7 +10,7 @@ function Footer() {
         {/* Optional Links */}
         <div className={styles.footerLinks}>
            <a href="https://www.linkedin.com/in/nikhil-goduguchintha/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>LinkedIn</a>
-           <a href="https://github.com/nikhilgoduguchintha" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>GitHub</a>
+           <a href="https://www.github.com/nikhilgoduguchintha" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>GitHub</a>
         </div>
         <p className={styles.copyright}>
           &copy; {currentYear} [Nikhil G]. All rights reserved.
