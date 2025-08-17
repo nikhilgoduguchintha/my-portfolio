@@ -60,6 +60,9 @@ function Hero() {
           <a href="#contact" className={styles.secondaryButton}>
             Get In Touch
           </a>
+          <a href="../assets/resume.pdf" download="Nikhil-Resume.pdf" className={styles.secondaryButton}>
+            Download resume
+          </a>
         </motion.div>
       </motion.div>
     </section>
