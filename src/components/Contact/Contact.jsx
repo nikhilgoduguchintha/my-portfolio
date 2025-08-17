@@ -32,10 +32,10 @@ function Contact() {
              <p className={styles.linksHeading}>Or find me on:</p>
              <div className={styles.socialLinks}>
                 <a href="https://www.linkedin.com/in/nikhil-goduguchintha/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
-                   <FaLinkedin /> <span>LinkedIn</span> {/* Placeholder text */}
+                   <FaLinkedin /> <span>LinkedIn</span>
                 </a>
-                <a href="YOUR_GIhttps://github.com/nikhilgoduguchinthaTHUB_URL" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
-                   <FaGithub /> <span>GitHub</span> {/* Placeholder text */}
+                <a href="https://www.github.com/nikhilgoduguchintha" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
+                   <FaGithub /> <span>GitHub</span>
                 </a>
              </div>
           </div>
