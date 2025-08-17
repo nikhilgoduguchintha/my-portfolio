@@ -4,8 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import styles from './Hero.module.css';
 
 function Hero() {
-  const headline = "Hi, I'm Goduguchintha Nikhil. A Frontend Engineer building intuitive and performant web experiences.";
-  const intro = "With 4 years of experience delivering impactful solutions for companies like Lloyds, Cloud4C, and Tech Mahindra (for Telefonica), I focus on creating clean code, seamless user interfaces, and engaging interactions.";
+  const headline = "Hi, I'm Goduguchintha Nikhil. A Full-Stack Engineer building intuitive and performant web experiences.";
+  const intro = "With over 5 years of experience delivering impactful solutions for companies like Lloyds, Cloud4C, and Tech Mahindra (for Telefonica), I focus on creating clean code, seamless user interfaces, and engaging interactions.";
 
   // Ref for the section to track scroll progress within it
   const targetRef = useRef(null);
