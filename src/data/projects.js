@@ -6,7 +6,7 @@ export const projectData = [
     company: "Tech Mahindra",
     imageUrl: "/images/ecommerce-placeholder.png",
     description: "Contributed to the development of a high-traffic, customer-facing mobile e-commerce platform, aimed at enhancing the online purchasing journey and user engagement for Telefonica customers across various regions.", // <-- Example Elaboration
-    role: "Frontend Engineer within a large Agile team. Developed and maintained key UI components for product listings, shopping cart interactions, user authentication, and account management sections using React. Collaborated closely with UX/UI designers and backend developers on API integration and feature implementation. Also gained familiarity with backend services [mention tech if known] through minor contributions.", // <-- Example Elaboration
+    role: "Frontend Engineer within a large Agile team. Developed and maintained key UI components for product listings, shopping cart interactions, user authentication, and account management sections using React. Collaborated closely with UX/UI designers and backend developers on API integration and feature implementation across multiple regional markets.",
     techStack: ["React", "JavaScript", "HTML", "CSS", "REST APIs"],
     liveUrl: "https://www.o2online.de/",
   },
@@ -22,6 +22,26 @@ export const projectData = [
   },
   {
     id: 3,
+    title: "ProAgentAI - Company Landing Page",
+    company: "ProAgentAI (Freelance)",
+    imageUrl: "/images/proagentai-placeholder.png",
+    description: "Designed and developed a fully responsive landing page for ProAgentAI, a B2B AI automation company. Set up a complete CI/CD pipeline using Vercel for automated deployments on every push, and configured the site to serve on a custom domain.",
+    role: "Sole Developer responsible for the full project lifecycle — from UI design and React development to deployment infrastructure. Configured Vercel's CI/CD pipeline with GitHub integration for zero-downtime automated deploys and set up the custom domain with DNS configuration.",
+    techStack: ["React", "JavaScript", "CSS", "Vercel", "CI/CD", "Custom Domain"],
+    liveUrl: "https://proagentai.in",
+  },
+  {
+    id: 4,
+    title: "Music Library Application",
+    company: "Individual Client (Freelance)",
+    imageUrl: "/images/music-library-placeholder.png",
+    description: "A full-stack music library application allowing users to browse, search, add, and manage their music collections. Features a React frontend with a RESTful Node.js backend and persistent data storage using MongoDB.",
+    role: "Full-Stack Developer responsible for both frontend and backend. Built the React UI with search, filtering, and CRUD operations for managing music tracks. Developed the Node.js/Express REST API and designed the MongoDB schema for storing and querying music data.",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "REST APIs", "JavaScript"],
+    liveUrl: null,
+  },
+  {
+    id: 5,
     title: "Lloyds Project (Banking)",
     company: "Lloyds Technology Centre",
     imageUrl: "/images/lloyds-placeholder.png",

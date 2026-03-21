@@ -1,59 +1,54 @@
-// src/components/ContactForm/ContactForm.jsx
-import React, { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import styles from './ContactForm.module.css'; // Import CSS module
-
-// Access environment variables (Ensure .env file is set up with VITE_ prefix)
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+import React, { useState } from 'react';
+import styles from './ContactForm.module.css';
 
 function ContactForm() {
-  const form = useRef();
   const [status, setStatus] = useState('');
+  const [statusType, setStatusType] = useState('info');
   const [isLoading, setIsLoading] = useState(false);
-  const [statusType, setStatusType] = useState('info'); // 'info', 'success', 'error'
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      console.error("EmailJS environment variables are not set properly!");
-      setStatus('Configuration error. Cannot send message.');
-      setStatusType('error');
-      return;
-    }
-
     setIsLoading(true);
     setStatus('Sending...');
     setStatusType('info');
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-      .then((result) => {
-        console.log('EmailJS Success:', result.text);
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mzdjqgnq', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
         setStatus('Message sent successfully!');
         setStatusType('success');
-        form.current.reset();
-      }, (error) => {
-        console.error('EmailJS Failed:', error.text);
-        setStatus(`Failed: ${error.text || 'Please try again.'}`);
+        form.reset();
+      } else {
+        const json = await response.json();
+        const errorMsg = json?.errors?.map((e) => e.message).join(', ') || 'Please try again.';
+        setStatus(`Failed: ${errorMsg}`);
         setStatusType('error');
-      })
-      .finally(() => {
-         setIsLoading(false);
-         // Optional: Clear status message after a few seconds
-         setTimeout(() => setStatus(''), 5000);
-      });
+      }
+    } catch (err) {
+      setStatus('Network error. Please try again.');
+      setStatusType('error');
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setStatus(''), 5000);
+    }
   };
 
   const getStatusClass = () => {
     if (statusType === 'success') return styles.statusSuccess;
     if (statusType === 'error') return styles.statusError;
-    return styles.statusMessage; // Default info style (can be same as base)
-  }
+    return styles.statusMessage;
+  };
 
   return (
-    <form ref={form} onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <div>
         <label htmlFor="user_name" className={styles.label}>Name</label>
         <input
@@ -76,7 +71,7 @@ function ContactForm() {
         ></textarea>
       </div>
       <div className={styles.buttonWrapper}>
-        <button type="submit" disabled={isLoading} className={styles.button} >
+        <button type="submit" disabled={isLoading} className={styles.button}>
           {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </div>
@@ -84,4 +79,5 @@ function ContactForm() {
     </form>
   );
 }
+
 export default ContactForm;

@@ -1,0 +1,132 @@
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.name {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 300px;
+  margin-top: 0.25rem;
+}
+
+/* Available badge */
+.availableBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+.availableDot {
+  width: 7px;
+  height: 7px;
+  background: #64ffda;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0;
+  transition: color 0.2s ease;
+  opacity: 1;
+}
+
+.navItem:hover {
+  color: var(--white);
+  opacity: 1;
+}
+
+.navItem:hover .navLine {
+  width: 3rem;
+  background-color: var(--white);
+}
+
+.navItemActive {
+  color: var(--white);
+}
+
+.navItemActive .navLine {
+  width: 3rem;
+  background-color: var(--white);
+}
+
+.navLine {
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background-color: var(--text-dim);
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.navLabel {
+  transition: color 0.2s ease;
+}
+
+/* Socials */
+.socials {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.socialIcon {
+  color: var(--text-dim);
+  font-size: 1.3rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  opacity: 1;
+}
+
+.socialIcon:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .name { font-size: 2.2rem; }
+  .nav { flex-direction: row; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 1rem 0; }
+  .navLine { display: none; }
+  .navItem { font-size: 0.75rem; padding: 0.3rem 0; }
+}

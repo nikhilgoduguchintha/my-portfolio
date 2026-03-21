@@ -1,56 +1,25 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { skillsData } from '../../data/skills';
 import styles from './Skills.module.css';
 
 function Skills() {
-  const getIcon = (skillName) => {
-    return '●';
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <section id="skills" className={`container ${styles.skillsSection}`}>
-      <motion.h2 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5 }}
-      >
-        Skills & Technologies
-      </motion.h2>
-      <motion.div
-          className={styles.grid}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ staggerChildren: 0.1 }}
-      >
+    <section id="skills" className={styles.section}>
+      <h2 className={styles.sectionHeading}>Skills</h2>
+      <div className={styles.grid}>
         {Object.entries(skillsData).map(([category, skillsList]) => (
-          <motion.div
-            key={category}
-            variants={cardVariants}
-            className={styles.skillCard}
-          >
-            <h3 className={styles.categoryTitle}>
-              {category}
-            </h3>
-            <ul className={styles.skillList}>
+          <div key={category} className={styles.category}>
+            <h3 className={styles.categoryTitle}>{category}</h3>
+            <div className={styles.badgeList}>
               {skillsList.map((skill) => (
-                <li key={skill.name} className={styles.skillItem}>
-                  <span className={styles.skillIcon}>{getIcon(skill.name)}</span>
-                  <span>{skill.name}</span>
-                </li>
+                <span key={skill.name} className={styles.badge}>{skill.name}</span>
               ))}
-            </ul>
-          </motion.div>
+            </div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }
+
 export default Skills;

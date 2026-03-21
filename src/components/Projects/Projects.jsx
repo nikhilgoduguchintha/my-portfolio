@@ -1,39 +1,45 @@
-// src/components/Projects/Projects.jsx
 import React from 'react';
-import ProjectCard from '../ProjectCard/ProjectCard';
-import { motion } from 'framer-motion';
 import { projectData } from '../../data/projects';
 import styles from './Projects.module.css';
+import { FiExternalLink } from 'react-icons/fi';
 
 function Projects() {
   return (
-    <section id="projects" className={styles.projectsSection}>
-      <div className="container">
-        <motion.h2
-          className={styles.heading}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-        >
-          My Work / Projects
-        </motion.h2>
-        <div className={styles.grid}>
-          {projectData.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className={styles.gridItem}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
-        </div>
+    <section id="projects" className={styles.section}>
+      <h2 className={styles.sectionHeading}>Projects</h2>
+      <div className={styles.list}>
+        {projectData.map((project) => (
+          <a
+            key={project.id}
+            href={project.liveUrl || '#'}
+            target={project.liveUrl ? '_blank' : '_self'}
+            rel="noopener noreferrer"
+            className={`${styles.card} ${!project.liveUrl ? styles.noLink : ''}`}
+            onClick={!project.liveUrl ? (e) => e.preventDefault() : undefined}
+          >
+            <div className={styles.cardLeft}>
+              <span className={styles.cardNumber}>0{project.id}</span>
+            </div>
+            <div className={styles.cardRight}>
+              <div className={styles.cardHeader}>
+                <h3 className={styles.cardTitle}>
+                  {project.title}
+                  {project.liveUrl && <FiExternalLink className={styles.extIcon} />}
+                </h3>
+                <span className={styles.company}>{project.company}</span>
+              </div>
+              <p className={styles.description}>{project.description}</p>
+              <div className={styles.techList}>
+                {project.techStack.map((tech) => (
+                  <span key={tech} className={styles.techBadge}>{tech}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );
 }
+
 export default Projects;

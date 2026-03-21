@@ -31,7 +31,6 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .card {
@@ -41,7 +40,6 @@
   border-radius: 6px;
   border: 1px solid transparent;
   transition: background-color 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
   text-decoration: none;
 }
 
@@ -51,50 +49,44 @@
   opacity: 1;
 }
 
-.noLink {
-  cursor: default;
-}
-
 .cardLeft {
   flex-shrink: 0;
+  width: 6rem;
   padding-top: 3px;
 }
 
-.cardNumber {
+.date {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-dim);
+  white-space: nowrap;
 }
 
 .cardRight {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
-.cardHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.cardTitle {
-  font-size: 0.97rem;
+.title {
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-light);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.4rem;
+  line-height: 1.4;
   transition: color 0.2s ease;
 }
 
-.card:hover .cardTitle {
+.card:hover .title {
   color: var(--accent);
 }
 
 .extIcon {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   flex-shrink: 0;
+  margin-top: 3px;
   transition: transform 0.2s ease;
 }
 
@@ -102,31 +94,39 @@
   transform: translate(2px, -2px);
 }
 
-.company {
-  font-size: 0.78rem;
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-}
-
-.description {
-  font-size: 0.88rem;
+.excerpt {
+  font-size: 0.85rem;
   color: var(--text-dim);
   line-height: 1.6;
 }
 
-.techList {
+.tagList {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.25rem;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
 }
 
-.techBadge {
+.tag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   background-color: var(--accent-dim);
   color: var(--accent);
-  padding: 0.2rem 0.65rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 9999px;
-  white-space: nowrap;
+}
+
+.viewAll {
+  display: inline-block;
+  margin-top: 1.5rem;
+  margin-left: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  transition: gap 0.2s ease;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+  opacity: 1;
 }
