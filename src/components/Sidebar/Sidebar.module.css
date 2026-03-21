@@ -104,6 +104,33 @@
   transition: color 0.2s ease;
 }
 
+/* Bottom */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease, color 0.2s ease;
+  width: fit-content;
+}
+
+.resumeBtn:hover {
+  background: rgba(100, 255, 218, 0.1);
+}
+
 /* Socials */
 .socials {
   display: flex;

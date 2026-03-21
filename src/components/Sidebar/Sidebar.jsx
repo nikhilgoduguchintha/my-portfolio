@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaMediumM } from 'react-icons/fa';
+import { HiDownload } from 'react-icons/hi';
 import styles from './Sidebar.module.css';
 
 const navItems = [
@@ -98,25 +99,35 @@ function Sidebar() {
         })}
       </motion.nav>
 
-      {/* Bottom: Socials */}
+      {/* Bottom: Resume + Socials */}
       <motion.div
-        className={styles.socials}
+        className={styles.bottom}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        {socials.map((s) => (
-          <a
-            key={s.label}
-            href={s.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={s.label}
-            className={styles.socialIcon}
-          >
-            {s.icon}
-          </a>
-        ))}
+        <a
+          href="/Nikhil_Goduguchintha_Resume.pdf"
+          download
+          className={styles.resumeBtn}
+        >
+          <HiDownload />
+          Download Resume
+        </a>
+        <div className={styles.socials}>
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              className={styles.socialIcon}
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
       </motion.div>
     </>
   );
